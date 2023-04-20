@@ -781,33 +781,7 @@ Your goal is to fix an error in the code. You should think about all the things 
 
 **Patrik Malý**
   
-num_layers: 2, type: <class 'int'>
-attention_heads: 8, type: <class 'int'>
-hidden_units: 64, type: <class 'int'>
-dropout_rate: 0.1, type: <class 'float'>
-input_vocab_size: 5000, type: <class 'int'>
-target_vocab_size: 5000, type: <class 'int'>
-max_seq_length: 50, type: <class 'int'>
----------------------------------------------------------------------------
-AttributeError                            Traceback (most recent call last)
-Cell In[13], line 13
-     10     transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
-     11     model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
----> 13 test_transformer_model()
-
-Cell In[13], line 11, in test_transformer_model()
-      8 max_seq_length = 50
-     10 transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
----> 11 model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
-
-Cell In[12], line 27, in TransformerModel.build_model(self, input_vocab_size, target_vocab_size, max_seq_length)
-     25 # Encoder
-     26 encoder = tf.keras.layers.Embedding(input_vocab_size, self.hidden_units)(encoder_inputs)
----> 27 encoder = tf.keras.layers.PositionalEncoding(self.hidden_units)(encoder)
-     28 for _ in range(self.num_layers):
-     29     encoder = tf.keras.layers.TransformerBlock(hidden_units=self.hidden_units, num_heads=self.attention_heads, mlp_dim=self.hidden_units*4, dropout=self.dropout_rate)(encoder)
-
-AttributeError: module 'tensorflow.keras.layers' has no attribute 'PositionalEncoding'
+(print statements and error message)
 
   **ChatGPT**
   
@@ -880,33 +854,9 @@ Your goal is to fix an error in the code. You should think about all the things 
 
 **Patrik Malý**
   
-num_layers: 2, type: <class 'int'>
-attention_heads: 8, type: <class 'int'>
-hidden_units: 64, type: <class 'int'>
-dropout_rate: 0.1, type: <class 'float'>
-input_vocab_size: 5000, type: <class 'int'>
-target_vocab_size: 5000, type: <class 'int'>
-max_seq_length: 50, type: <class 'int'>
----------------------------------------------------------------------------
-AttributeError                            Traceback (most recent call last)
-Cell In[12], line 13
-     10     transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
-     11     model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
----> 13 test_transformer_model()
+  
+(print statements and error message)
 
-Cell In[12], line 11, in test_transformer_model()
-      8 max_seq_length = 50
-     10 transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
----> 11 model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
-
-Cell In[11], line 27, in TransformerModel.build_model(self, input_vocab_size, target_vocab_size, max_seq_length)
-     25 # Encoder
-     26 encoder = tf.keras.layers.Embedding(input_vocab_size, self.hidden_units)(encoder_inputs)
----> 27 encoder = tf.keras.layers.PositionalEncoding(self.hidden_units)(encoder)
-     28 for _ in range(self.num_layers):
-     29     encoder = tf.keras.layers.TransformerBlock(hidden_units=self.hidden_units, num_heads=self.attention_heads, mlp_dim=self.hidden_units*4, dropout=self.dropout_rate)(encoder)
-
-AttributeError: module 'tensorflow.keras.layers' has no attribute 'PositionalEncoding'
 
  **ChatGPT**
   
@@ -979,33 +929,10 @@ Your goal is to fix an error in the code. You should think about all the things 
 
 **Patrik Malý**
   
-num_layers: 2, type: <class 'int'>
-attention_heads: 8, type: <class 'int'>
-hidden_units: 64, type: <class 'int'>
-dropout_rate: 0.1, type: <class 'float'>
-input_vocab_size: 5000, type: <class 'int'>
-target_vocab_size: 5000, type: <class 'int'>
-max_seq_length: 50, type: <class 'int'>
----------------------------------------------------------------------------
-AttributeError                            Traceback (most recent call last)
-Cell In[12], line 13
-     10     transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
-     11     model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
----> 13 test_transformer_model()
+  
+(print statements and error message)
 
-Cell In[12], line 11, in test_transformer_model()
-      8 max_seq_length = 50
-     10 transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
----> 11 model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
 
-Cell In[11], line 29, in TransformerModel.build_model(self, input_vocab_size, target_vocab_size, max_seq_length)
-     27 encoder = PositionalEncoding(self.hidden_units)(encoder)
-     28 for _ in range(self.num_layers):
----> 29     encoder = tf.keras.layers.TransformerBlock(hidden_units=self.hidden_units, num_heads=self.attention_heads, mlp_dim=self.hidden_units*4, dropout=self.dropout_rate)(encoder)
-     31 # Decoder
-     32 decoder = tf.keras.layers.Embedding(target_vocab_size, self.hidden_units)(decoder_inputs)
-
-AttributeError: module 'tensorflow.keras.layers' has no attribute 'TransformerBlock'
 
   **ChatGPT**
   
@@ -1116,49 +1043,10 @@ Your goal is to fix an error in the code. You should think about all the things 
 
 **Patrik Malý**
   
-num_layers: 2, type: <class 'int'>
-attention_heads: 8, type: <class 'int'>
-hidden_units: 64, type: <class 'int'>
-dropout_rate: 0.1, type: <class 'float'>
-input_vocab_size: 5000, type: <class 'int'>
-target_vocab_size: 5000, type: <class 'int'>
-max_seq_length: 50, type: <class 'int'>
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-Cell In[13], line 13
-     10     transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
-     11     model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
----> 13 test_transformer_model()
+  
+(print statements and error message)
 
-Cell In[13], line 11, in test_transformer_model()
-      8 max_seq_length = 50
-     10 transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
----> 11 model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
 
-Cell In[12], line 24, in TransformerModel.build_model(self, input_vocab_size, target_vocab_size, max_seq_length)
-     22 encoder = PositionalEncoding(self.hidden_units)(encoder)
-     23 for _ in range(self.num_layers):
----> 24     attention_output = layers.MultiHeadAttention(num_heads=self.attention_heads, key_dim=self.hidden_units)([encoder, encoder])
-     25     attention_output = Dropout(self.dropout_rate)(attention_output)
-     26     encoder = layers.Add()([encoder, attention_output])
-
-File C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py:70, in filter_traceback.<locals>.error_handler(*args, **kwargs)
-     67     filtered_tb = _process_traceback_frames(e.__traceback__)
-     68     # To get the full stack trace, call:
-     69     # `tf.debugging.disable_traceback_filtering()`
----> 70     raise e.with_traceback(filtered_tb) from None
-     71 finally:
-     72     del filtered_tb
-
-File C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py:96, in inject_argument_info_in_traceback.<locals>.error_handler(*args, **kwargs)
-     94 bound_signature = None
-     95 try:
----> 96     return fn(*args, **kwargs)
-     97 except Exception as e:
-     98     if hasattr(e, "_keras_call_info_injected"):
-     99         # Only inject info for the innermost failing call
-
-TypeError: MultiHeadAttention.call() missing 1 required positional argument: 'value'
   
   **ChatGPT**
   
@@ -1521,21 +1409,10 @@ Your goal is to fix an error in the code. You should think about all the things 
 
 **Patrik Malý**
   
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-Cell In[26], line 35
-     31     assert output_data.shape == (batch_size, max_seq_length, target_vocab_size), "Output shape mismatch."
-     33     print("Test passed!")
----> 35 test_model()
+  
+(error message)
 
-Cell In[26], line 20, in test_model()
-     17 batch_size = 32
-     19 # Create the transformer model
----> 20 transformer = TransformerModel(num_layers, attention_heads, hidden_units, dropout_rate)
-     21 model = transformer.build_model(input_vocab_size, target_vocab_size, max_seq_length)
-     23 # Generate random input data for testing
 
-TypeError: TransformerModel.__init__() missing 3 required positional arguments: 'input_vocab_size', 'target_vocab_size', and 'max_seq_length'
 
   **ChatGPT**
   
@@ -1594,82 +1471,10 @@ Your goal is to fix an error in the code. You should think about all the things 
 
 **Patrik Malý**
   
----------------------------------------------------------------------------
-ValueError                                Traceback (most recent call last)
-Cell In[27], line 27
-     23     assert output_data.shape == (batch_size, max_seq_length, target_vocab_size), "Output shape mismatch."
-     25     print("Test passed!")
----> 27 test_model()
+  
+(error message)
 
-Cell In[27], line 20, in test_model()
-     17 decoder_input_data = np.random.randint(0, target_vocab_size, size=(batch_size, max_seq_length))
-     19 # Perform a forward pass
----> 20 output_data = transformer.predict([encoder_input_data, decoder_input_data])
-     22 # Check the output shape
-     23 assert output_data.shape == (batch_size, max_seq_length, target_vocab_size), "Output shape mismatch."
 
-File C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py:70, in filter_traceback.<locals>.error_handler(*args, **kwargs)
-     67     filtered_tb = _process_traceback_frames(e.__traceback__)
-     68     # To get the full stack trace, call:
-     69     # `tf.debugging.disable_traceback_filtering()`
----> 70     raise e.with_traceback(filtered_tb) from None
-     71 finally:
-     72     del filtered_tb
-
-File ~\AppData\Local\Temp\__autograph_generated_filee79jk38b.py:15, in outer_factory.<locals>.inner_factory.<locals>.tf__predict_function(iterator)
-     13 try:
-     14     do_return = True
----> 15     retval_ = ag__.converted_call(ag__.ld(step_function), (ag__.ld(self), ag__.ld(iterator)), None, fscope)
-     16 except:
-     17     do_return = False
-
-File ~\AppData\Local\Temp\__autograph_generated_fileobclp8xd.py:36, in outer_factory.<locals>.inner_factory.<locals>.tf__call(self, inputs)
-     34 i = ag__.Undefined('i')
-     35 attention_output = ag__.Undefined('attention_output')
----> 36 ag__.for_stmt(ag__.converted_call(ag__.ld(range), (0, ag__.converted_call(ag__.ld(len), (ag__.ld(self).encoder_layers,), None, fscope), 6), None, fscope), None, loop_body, get_state, set_state, ('encoder',), {'iterate_names': 'i'})
-     37 decoder = ag__.converted_call(ag__.ld(self).decoder_embedding, (ag__.ld(decoder_inputs),), None, fscope)
-     38 decoder = ag__.converted_call(ag__.ld(self).decoder_positional_encoding, (ag__.ld(decoder),), None, fscope)
-
-File ~\AppData\Local\Temp\__autograph_generated_fileobclp8xd.py:24, in outer_factory.<locals>.inner_factory.<locals>.tf__call.<locals>.loop_body(itr)
-     22 nonlocal encoder
-     23 i = itr
----> 24 attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i)], (), dict(query=ag__.ld(encoder), key=ag__.ld(encoder), value=ag__.ld(encoder)), fscope)
-     25 attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i) + 1], (ag__.ld(attention_output),), None, fscope)
-     26 encoder = ag__.converted_call(ag__.converted_call(ag__.ld(layers).Add, (), None, fscope), ([ag__.ld(encoder), ag__.ld(attention_output)],), None, fscope)
-
-ValueError: in user code:
-
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2169, in predict_function  *
-        return step_function(self, iterator)
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2155, in step_function  **
-        outputs = model.distribute_strategy.run(run_step, args=(data,))
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2143, in run_step  **
-        outputs = model.predict_step(data)
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2111, in predict_step
-        return self(x, training=False)
-    File "C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
-        raise e.with_traceback(filtered_tb) from None
-    File "C:\Users\VivaG\AppData\Local\Temp\__autograph_generated_fileobclp8xd.py", line 36, in tf__call
-        ag__.for_stmt(ag__.converted_call(ag__.ld(range), (0, ag__.converted_call(ag__.ld(len), (ag__.ld(self).encoder_layers,), None, fscope), 6), None, fscope), None, loop_body, get_state, set_state, ('encoder',), {'iterate_names': 'i'})
-    File "C:\Users\VivaG\AppData\Local\Temp\__autograph_generated_fileobclp8xd.py", line 24, in loop_body
-        attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i)], (), dict(query=ag__.ld(encoder), key=ag__.ld(encoder), value=ag__.ld(encoder)), fscope)
-
-    ValueError: Exception encountered when calling layer 'transformer_model' (type TransformerModel).
-    
-    in user code:
-    
-        File "C:\Users\VivaG\AppData\Local\Temp\ipykernel_6676\4154582997.py", line 59, in call  *
-            attention_output = self.encoder_layers[i](query=encoder, key=encoder, value=encoder)
-        File "C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler  **
-            raise e.with_traceback(filtered_tb) from None
-        File "C:\Python311\Lib\site-packages\keras\utils\layer_utils.py", line 809, in split_out_first_arg
-            raise ValueError(
-    
-        ValueError: The first argument to `Layer.call` must always be passed.
-    
-    
-    Call arguments received by layer 'transformer_model' (type TransformerModel):
-      • inputs=('tf.Tensor(shape=(32, 50), dtype=int32)', 'tf.Tensor(shape=(32, 50), dtype=int32)')
 
   **ChatGPT**
   
@@ -1742,82 +1547,9 @@ Certainly, here's the updated call method for the TransformerModel class:
 
 **Patrik Malý**
   
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-Cell In[29], line 27
-     23     assert output_data.shape == (batch_size, max_seq_length, target_vocab_size), "Output shape mismatch."
-     25     print("Test passed!")
----> 27 test_model()
+  
+(error message)
 
-Cell In[29], line 20, in test_model()
-     17 decoder_input_data = np.random.randint(0, target_vocab_size, size=(batch_size, max_seq_length))
-     19 # Perform a forward pass
----> 20 output_data = transformer.predict([encoder_input_data, decoder_input_data])
-     22 # Check the output shape
-     23 assert output_data.shape == (batch_size, max_seq_length, target_vocab_size), "Output shape mismatch."
-
-File C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py:70, in filter_traceback.<locals>.error_handler(*args, **kwargs)
-     67     filtered_tb = _process_traceback_frames(e.__traceback__)
-     68     # To get the full stack trace, call:
-     69     # `tf.debugging.disable_traceback_filtering()`
----> 70     raise e.with_traceback(filtered_tb) from None
-     71 finally:
-     72     del filtered_tb
-
-File ~\AppData\Local\Temp\__autograph_generated_filee79jk38b.py:15, in outer_factory.<locals>.inner_factory.<locals>.tf__predict_function(iterator)
-     13 try:
-     14     do_return = True
----> 15     retval_ = ag__.converted_call(ag__.ld(step_function), (ag__.ld(self), ag__.ld(iterator)), None, fscope)
-     16 except:
-     17     do_return = False
-
-File ~\AppData\Local\Temp\__autograph_generated_fileib1jm8mu.py:36, in outer_factory.<locals>.inner_factory.<locals>.tf__call(self, inputs)
-     34 i = ag__.Undefined('i')
-     35 attention_output = ag__.Undefined('attention_output')
----> 36 ag__.for_stmt(ag__.converted_call(ag__.ld(range), (0, ag__.converted_call(ag__.ld(len), (ag__.ld(self).encoder_layers,), None, fscope), 6), None, fscope), None, loop_body, get_state, set_state, ('encoder',), {'iterate_names': 'i'})
-     37 decoder = ag__.converted_call(ag__.ld(self).decoder_embedding, (ag__.ld(decoder_inputs),), None, fscope)
-     38 decoder = ag__.converted_call(ag__.ld(self).decoder_positional_encoding, (ag__.ld(decoder),), None, fscope)
-
-File ~\AppData\Local\Temp\__autograph_generated_fileib1jm8mu.py:24, in outer_factory.<locals>.inner_factory.<locals>.tf__call.<locals>.loop_body(itr)
-     22 nonlocal encoder
-     23 i = itr
----> 24 attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i)], (ag__.ld(self),), dict(query=ag__.ld(encoder), key=ag__.ld(encoder), value=ag__.ld(encoder)), fscope)
-     25 attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i) + 1], (ag__.ld(attention_output),), None, fscope)
-     26 encoder = ag__.converted_call(ag__.converted_call(ag__.ld(layers).Add, (), None, fscope), ([ag__.ld(encoder), ag__.ld(attention_output)],), None, fscope)
-
-TypeError: in user code:
-
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2169, in predict_function  *
-        return step_function(self, iterator)
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2155, in step_function  **
-        outputs = model.distribute_strategy.run(run_step, args=(data,))
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2143, in run_step  **
-        outputs = model.predict_step(data)
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2111, in predict_step
-        return self(x, training=False)
-    File "C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
-        raise e.with_traceback(filtered_tb) from None
-    File "C:\Users\VivaG\AppData\Local\Temp\__autograph_generated_fileib1jm8mu.py", line 36, in tf__call
-        ag__.for_stmt(ag__.converted_call(ag__.ld(range), (0, ag__.converted_call(ag__.ld(len), (ag__.ld(self).encoder_layers,), None, fscope), 6), None, fscope), None, loop_body, get_state, set_state, ('encoder',), {'iterate_names': 'i'})
-    File "C:\Users\VivaG\AppData\Local\Temp\__autograph_generated_fileib1jm8mu.py", line 24, in loop_body
-        attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i)], (ag__.ld(self),), dict(query=ag__.ld(encoder), key=ag__.ld(encoder), value=ag__.ld(encoder)), fscope)
-
-    TypeError: Exception encountered when calling layer 'transformer_model_1' (type TransformerModel).
-    
-    in user code:
-    
-        File "C:\Users\VivaG\AppData\Local\Temp\ipykernel_6676\373377249.py", line 59, in call  *
-            attention_output = self.encoder_layers[i](self, query=encoder, key=encoder, value=encoder)
-        File "C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler  **
-            raise e.with_traceback(filtered_tb) from None
-        File "C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 158, in error_handler
-            del bound_signature
-    
-        TypeError: MultiHeadAttention.call() got multiple values for argument 'query'
-    
-    
-    Call arguments received by layer 'transformer_model_1' (type TransformerModel):
-      • inputs=('tf.Tensor(shape=(32, 50), dtype=int32)', 'tf.Tensor(shape=(32, 50), dtype=int32)')
 
   **ChatGPT**
   
@@ -1843,82 +1575,10 @@ Your goal is to fix an error in the code. You should think about all the things 
 
 **Patrik Malý**
   
----------------------------------------------------------------------------
-ValueError                                Traceback (most recent call last)
-Cell In[31], line 27
-     23     assert output_data.shape == (batch_size, max_seq_length, target_vocab_size), "Output shape mismatch."
-     25     print("Test passed!")
----> 27 test_model()
+  
+(error message)
 
-Cell In[31], line 20, in test_model()
-     17 decoder_input_data = np.random.randint(0, target_vocab_size, size=(batch_size, max_seq_length))
-     19 # Perform a forward pass
----> 20 output_data = transformer.predict([encoder_input_data, decoder_input_data])
-     22 # Check the output shape
-     23 assert output_data.shape == (batch_size, max_seq_length, target_vocab_size), "Output shape mismatch."
 
-File C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py:70, in filter_traceback.<locals>.error_handler(*args, **kwargs)
-     67     filtered_tb = _process_traceback_frames(e.__traceback__)
-     68     # To get the full stack trace, call:
-     69     # `tf.debugging.disable_traceback_filtering()`
----> 70     raise e.with_traceback(filtered_tb) from None
-     71 finally:
-     72     del filtered_tb
-
-File ~\AppData\Local\Temp\__autograph_generated_filee79jk38b.py:15, in outer_factory.<locals>.inner_factory.<locals>.tf__predict_function(iterator)
-     13 try:
-     14     do_return = True
----> 15     retval_ = ag__.converted_call(ag__.ld(step_function), (ag__.ld(self), ag__.ld(iterator)), None, fscope)
-     16 except:
-     17     do_return = False
-
-File ~\AppData\Local\Temp\__autograph_generated_filelcvjjyc3.py:36, in outer_factory.<locals>.inner_factory.<locals>.tf__call(self, inputs)
-     34 i = ag__.Undefined('i')
-     35 attention_output = ag__.Undefined('attention_output')
----> 36 ag__.for_stmt(ag__.converted_call(ag__.ld(range), (0, ag__.converted_call(ag__.ld(len), (ag__.ld(self).encoder_layers,), None, fscope), 6), None, fscope), None, loop_body, get_state, set_state, ('encoder',), {'iterate_names': 'i'})
-     37 decoder = ag__.converted_call(ag__.ld(self).decoder_embedding, (ag__.ld(decoder_inputs),), None, fscope)
-     38 decoder = ag__.converted_call(ag__.ld(self).decoder_positional_encoding, (ag__.ld(decoder),), None, fscope)
-
-File ~\AppData\Local\Temp\__autograph_generated_filelcvjjyc3.py:24, in outer_factory.<locals>.inner_factory.<locals>.tf__call.<locals>.loop_body(itr)
-     22 nonlocal encoder
-     23 i = itr
----> 24 attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i)], (), dict(query=ag__.ld(encoder), key=ag__.ld(encoder), value=ag__.ld(encoder)), fscope)
-     25 attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i) + 1], (ag__.ld(attention_output),), None, fscope)
-     26 encoder = ag__.converted_call(ag__.converted_call(ag__.ld(layers).Add, (), None, fscope), ([ag__.ld(encoder), ag__.ld(attention_output)],), None, fscope)
-
-ValueError: in user code:
-
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2169, in predict_function  *
-        return step_function(self, iterator)
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2155, in step_function  **
-        outputs = model.distribute_strategy.run(run_step, args=(data,))
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2143, in run_step  **
-        outputs = model.predict_step(data)
-    File "C:\Python311\Lib\site-packages\keras\engine\training.py", line 2111, in predict_step
-        return self(x, training=False)
-    File "C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
-        raise e.with_traceback(filtered_tb) from None
-    File "C:\Users\VivaG\AppData\Local\Temp\__autograph_generated_filelcvjjyc3.py", line 36, in tf__call
-        ag__.for_stmt(ag__.converted_call(ag__.ld(range), (0, ag__.converted_call(ag__.ld(len), (ag__.ld(self).encoder_layers,), None, fscope), 6), None, fscope), None, loop_body, get_state, set_state, ('encoder',), {'iterate_names': 'i'})
-    File "C:\Users\VivaG\AppData\Local\Temp\__autograph_generated_filelcvjjyc3.py", line 24, in loop_body
-        attention_output = ag__.converted_call(ag__.ld(self).encoder_layers[ag__.ld(i)], (), dict(query=ag__.ld(encoder), key=ag__.ld(encoder), value=ag__.ld(encoder)), fscope)
-
-    ValueError: Exception encountered when calling layer 'transformer_model_2' (type TransformerModel).
-    
-    in user code:
-    
-        File "C:\Users\VivaG\AppData\Local\Temp\ipykernel_6676\920346789.py", line 59, in call  *
-            attention_output = self.encoder_layers[i](query=encoder, key=encoder, value=encoder)
-        File "C:\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler  **
-            raise e.with_traceback(filtered_tb) from None
-        File "C:\Python311\Lib\site-packages\keras\utils\layer_utils.py", line 809, in split_out_first_arg
-            raise ValueError(
-    
-        ValueError: The first argument to `Layer.call` must always be passed.
-    
-    
-    Call arguments received by layer 'transformer_model_2' (type TransformerModel):
-      • inputs=('tf.Tensor(shape=(32, 50), dtype=int32)', 'tf.Tensor(shape=(32, 50), dtype=int32)')
 
   
   **ChatGPT**
