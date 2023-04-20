@@ -43,7 +43,7 @@ End of this step marks the end of the coding - congratulations, your code is fin
 <br>
 <br>
 
-## The final version of the prompts used by the guide above (I also include the specific pseudoprompts used to create the prompts): 
+## The final version of the prompts used by the guide above: 
 
    
 
