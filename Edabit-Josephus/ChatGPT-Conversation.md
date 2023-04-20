@@ -129,7 +129,7 @@ Once these steps are completed, the Python program for the simplified Josephus p
 Here is the Python pseudocode based on the provided steps:
 
 python
-(The Pseudocode created by ChatGPT provided)
+(The Pseudocode created by ChatGPT)
 
 This pseudocode provides an outline of the steps necessary to implement the simplified Josephus problem in Python, including input validation, base case handling, main logic implementation, result returning, and testing the function with various inputs.
 
@@ -194,7 +194,7 @@ def validate_input and you don't need to ask the questions for this simple funct
 Here is the implementation of the validate_input function with the required print statements:
 
 python
-(The Code Snippet provided)
+(The Code Snippet)
 
 This implementation checks if the input people is a positive integer and raises a ValueError with an appropriate error message if not. It prints the function arguments and the results of the test cases.
 
@@ -235,7 +235,7 @@ Thank you for providing the pseudocode. Which part of the code would you like me
 Alright, I will implement the josephus function and print the required information for variables and arguments. Here's my implementation:
 
 python
-(The Code Snippet provided)
+(The Code Snippet)
 
 Now, I'll create a test to check if the code is working correctly:
 
