@@ -156,6 +156,35 @@ Your goal is to fix an error in the code. You should think about all the things 
 
   
 
-Your goal is to remove all unnecessary print statements from the code snippets I will provide you with and write the updated code snippets. These print statements were initially used to make troubleshooting of the code easier, but they are now redundant. I will provide you with a code snippet to rewrite. After receiving the code snippet, rewrite it in a way that leaves the program unchanged but removes unnecessary print statements. If you understand, say "Understood" and I will proceed by providing you with a code snippet. Repeat this process each time I provide you with a new code snippet.(**Back to** [**Step 3.**](#step3)) 
+Your goal is to remove all unnecessary print statements from the code snippets I will provide you with and write the updated code snippets. These print statements were initially used to make troubleshooting of the code easier, but they are now redundant. I will provide you with a code snippet to rewrite. After receiving the code snippet, rewrite it in a way that leaves the program unchanged but removes unnecessary print statements. If you understand, say "Understood" and I will proceed by providing you with a code snippet. Repeat this process each time I provide you with a new code snippet.(**Back to** [**Step 3.**](#step3))
+
+<br>
+<br>
+
+## Possible Issues and Their Solutions
+
+1. The model doesn't wait for me to provide the pseudocode format or it starts coding before I tell it which part of the pseudocode I want to code.
+
+**Solution:** Simply give the model the pseudoprompt or the name of the function you want to code right now in the next prompt.
+
+2. The model doesn't do what I instructed it to do.
+
+**Solution:** If the model simply misinterpreted your request, tell it what it did wrong and why its current response isn't what you had in mind.
+
+3. The model forgets what happened previously in the conversation.
+**Solution:** The model ran out of memory. If the function or class to code was so complex and so long that the model couldn't code the function during the course of a single conversation, do this:
+
++ If the code you couldn't finish is a function, break the function into smaller parts that you will code separately.
++ If the code you couldn't finish is a class, code its parts (methods) separately and if the code to implement is still too long, break the method into smaller parts (like with the functions) that will be coded and tested separately.
+
+4. The model tells me to try the "updated" code, which is exactly the same as before.
+
+**Solution:** Simply tell the model that it didn't change the code or its functionality and provide it with the code it was originally supposed to update for reference.
+
+5. The model uses different names for variables, functions, etc., than it was supposed to use, even though it used them correctly previously in the conversation.
+
+**Solution:** The model can quickly forget parts of a lengthy code. When this happens, tell it that it didn't use the correct name/parts of the code, and give it the full code of the part that causes the issue:
++ If it doesn't use functions correctly, pass it the full code of any function it forgot.
++ If the model uses wrong names for variables, provide it with a code snippet where the variables were initiated/used.
 
   
